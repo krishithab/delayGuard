@@ -4,10 +4,11 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Upload &amp; Analyze - DelayGuard</title>
+<meta name="description" content="Upload your service-request data to identify cases that may need attention. DelayGuard analyzes CSV and XLSX files to surface at-risk requests before SLA breaches occur."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Literata:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -106,21 +107,21 @@
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
-<!-- Top Navigation (JSON) -->
+<!-- Top Navigation -->
 <nav class="bg-surface dark:bg-surface-dim border-b border-on-surface-variant dark:border-outline-variant w-full sticky top-0 z-50">
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
 <div class="flex items-center gap-8">
-<a class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim tracking-tight font-bold" href="../delayguard_home/code.html">
+<a class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim tracking-tight font-bold" href="index.html">
                     DelayGuard
                 </a>
 <div class="hidden md:flex gap-6 items-center">
-<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 hover:opacity-90 transition-opacity" href="./code.html">Platform</a>
-<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:opacity-90 transition-opacity" href="../intelligence_report_dashboard/code.html">Intelligence</a>
-<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:opacity-90 transition-opacity" href="../how_delayguard_thinks/code.html">How It Works</a>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 hover:opacity-90 transition-opacity" href="upload.html">Platform</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:opacity-90 transition-opacity" href="intelligence.html">Intelligence</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:opacity-90 transition-opacity" href="how-it-works.html">How It Works</a>
 </div>
 </div>
 <div class="flex items-center gap-4">
-<a href="./code.html" class="hidden md:block bg-on-background text-on-primary font-label-md text-label-md px-6 py-2 uppercase tracking-wide border border-transparent hover:opacity-90 transition-opacity rounded-none">
+<a href="upload.html" class="hidden md:block bg-on-background text-on-primary font-label-md text-label-md px-6 py-2 uppercase tracking-wide border border-transparent hover:opacity-90 transition-opacity rounded-none">
                     Monitor Risk
                 </a>
 </div>
@@ -165,7 +166,7 @@
 <span id="detect-result" class="font-body-md text-body-md text-sm">—</span>
 </div>
 <div class="flex justify-end mt-4">
-<a id="run-analysis" href="../intelligence_report_dashboard/code.html" class="bg-primary-container text-on-primary font-label-md text-label-md px-8 py-3 uppercase tracking-wide hover:opacity-90 transition-opacity rounded-none border border-transparent">
+<a id="run-analysis" href="intelligence.html" class="bg-primary-container text-on-primary font-label-md text-label-md px-8 py-3 uppercase tracking-wide hover:opacity-90 transition-opacity rounded-none border border-transparent">
                                 Run DelayGuard Analysis
                             </a>
 </div>
@@ -222,7 +223,7 @@
 </div>
 </div>
 </main>
-<!-- Footer (JSON) -->
+<!-- Footer -->
 <footer class="bg-surface dark:bg-surface-dim border-t border-on-surface-variant dark:border-outline-variant w-full mt-auto">
 <div class="flex flex-col md:flex-row justify-between items-start w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto gap-8">
 <div class="flex flex-col gap-4">
@@ -230,9 +231,9 @@
 <span class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim">© 2026 DelayGuard.</span>
 </div>
 <div class="flex flex-wrap gap-6 md:gap-8">
-<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="./code.html">Platform</a>
-<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../intelligence_report_dashboard/code.html">Intelligence</a>
-<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../how_delayguard_thinks/code.html">How It Works</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="upload.html">Platform</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="intelligence.html">Intelligence</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="how-it-works.html">How It Works</a>
 </div>
 </div>
 </footer>
