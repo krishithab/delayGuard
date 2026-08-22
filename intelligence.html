@@ -119,25 +119,25 @@
 <!-- Header Section -->
 <header class="flex flex-col gap-2 max-w-3xl">
 <h1 class="font-display-lg text-display-lg text-on-background">Intelligence Report</h1>
-<p class="font-body-lg text-body-lg text-secondary">A prioritized view of requests that may need intervention.</p>
+<p class="font-body-lg text-body-lg text-secondary">A prioritized view of service requests most likely to require intervention.</p>
 </header>
 <!-- Key Metrics -->
 <section class="grid grid-cols-1 md:grid-cols-4 gap-gutter border-t border-b border-on-background py-8">
 <div class="flex flex-col gap-2 border-r border-surface-variant pr-gutter last:border-0 last:pr-0">
 <span class="font-label-md text-label-md uppercase text-secondary tracking-widest">REQUESTS ANALYZED</span>
-<span id="metric-requests" class="font-headline-lg text-headline-lg text-on-background">—</span>
+<span id="metric-requests" class="font-headline-lg text-headline-lg text-on-background">331</span>
 </div>
 <div class="flex flex-col gap-2 border-r border-surface-variant pr-gutter last:border-0 last:pr-0">
 <span class="font-label-md text-label-md uppercase text-secondary tracking-widest">AT-RISK REQUESTS</span>
-<span id="metric-at-risk" class="font-headline-lg text-headline-lg text-on-background">—</span>
+<span id="metric-at-risk" class="font-headline-lg text-headline-lg text-on-background">42</span>
 </div>
 <div class="flex flex-col gap-2 border-r border-surface-variant pr-gutter last:border-0 last:pr-0">
 <span class="font-label-md text-label-md uppercase text-primary-container tracking-widest font-bold">HIGH-RISK REQUESTS</span>
-<span id="metric-high-risk" class="font-headline-lg text-headline-lg text-primary-container font-bold">—</span>
+<span id="metric-high-risk" class="font-headline-lg text-headline-lg text-primary-container font-bold">11</span>
 </div>
 <div class="flex flex-col gap-2">
 <span class="font-label-md text-label-md uppercase text-secondary tracking-widest">NEAREST SLA DEADLINE</span>
-<span id="metric-nearest-sla" class="font-headline-lg text-headline-lg text-on-background">—</span>
+<span id="metric-nearest-sla" class="font-headline-lg text-headline-lg text-on-background">4h</span>
 </div>
 </section>
 <!-- Ranked Request List Core Feature -->
@@ -190,7 +190,7 @@
 <td class="py-4 px-4">Approval</td>
 <td class="py-4 px-4 font-bold text-primary-container">4h</td>
 <td class="py-4 px-4 font-bold text-primary-container">92/100</td>
-<td class="py-4 px-4 text-secondary">Approval stage is taking longer than historical average.</td>
+<td class="py-4 px-4 text-secondary">Only 4h remain before the SLA deadline while the request is still in Approval.</td>
 <td class="py-4 px-4 text-right">
 <button class="border border-on-background bg-surface text-on-background px-4 py-1 font-label-md text-label-md uppercase group-hover:bg-on-background group-hover:text-surface transition-colors">Escalate</button>
 </td>
