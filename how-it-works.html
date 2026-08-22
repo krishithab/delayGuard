@@ -469,9 +469,125 @@
                 padding: 24px 20px;
             }
 
-            .footer-links {
-                gap: 18px;
-            }
+            /* =========================================================
+   DELAYGUARD — PAGE CONSISTENCY OVERRIDE
+   ========================================================= */
+
+:root {
+    --dg-bg: #ffffff;
+    --dg-black: #000000;
+    --dg-gray: #555555;
+    --dg-accent: #7A1F2B;
+}
+
+/* Background + base text */
+html,
+body {
+    background: var(--dg-bg) !important;
+    color: var(--dg-black) !important;
+}
+
+/* Shared typography */
+body {
+    font-family: "Hanken Grotesk", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+.brand,
+.footer-brand,
+.arrow,
+.plus {
+    font-family: "EB Garamond", serif !important;
+}
+
+/* Accent */
+.brand,
+.nav-links a.active,
+.nav-links a:hover,
+.monitor-btn:hover,
+.process-card.highlight h2,
+.output-card h2,
+.result-card.accent h3,
+.footer-brand,
+.footer-links a:hover {
+    color: var(--dg-accent) !important;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--dg-bg) !important;
+    border-bottom-color: var(--dg-black) !important;
+}
+
+.nav-links a {
+    color: var(--dg-black) !important;
+}
+
+.nav-links a.active::after {
+    background: var(--dg-accent) !important;
+}
+
+/* Button */
+.monitor-btn {
+    background: var(--dg-black) !important;
+    color: #ffffff !important;
+}
+
+.monitor-btn:hover {
+    background: var(--dg-accent) !important;
+    color: #ffffff !important;
+}
+
+/* Main cards */
+.process-card,
+.output,
+.output-card,
+.result-card {
+    background: var(--dg-bg) !important;
+    border-color: var(--dg-black) !important;
+}
+
+/* Secondary text */
+.intro p,
+.process-card p,
+.output-card p,
+.result-card p {
+    color: var(--dg-gray) !important;
+}
+
+/* Accent elements */
+.intro p {
+    border-left-color: var(--dg-accent) !important;
+}
+
+.icon.accent {
+    border-color: var(--dg-accent) !important;
+    color: var(--dg-accent) !important;
+}
+
+.icon.accent-filled {
+    background: var(--dg-accent) !important;
+    border-color: var(--dg-accent) !important;
+    color: #ffffff !important;
+}
+
+/* Risk Engine */
+.process-card.highlight {
+    border-color: var(--dg-black) !important;
+    box-shadow: 6px 6px 0 var(--dg-black) !important;
+}
+
+/* Footer */
+.footer {
+    background: var(--dg-bg) !important;
+    border-top-color: var(--dg-black) !important;
+}
+
+.footer-links a {
+    color: #333333 !important;
+}
         }
 
     </style>
