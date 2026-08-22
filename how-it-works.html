@@ -261,18 +261,34 @@
 <p class="font-body-md text-body-md text-secondary text-sm">Combines SLA timing and delay indicators into a 0–100 risk score.</p>
 </div>
 </div>
-<div class="mt-8 md:mt-16 flex flex-col md:flex-row justify-center items-stretch md:items-center relative z-10 gap-8 md:gap-12">
-<!-- Step 4 -->
-<div class="flex-1 max-w-xs bg-surface border border-black p-6 flex flex-col items-center text-center relative group">
-<h3 class="font-headline-md text-headline-md mb-2 text-primary-container">Risk Score</h3>
-<p class="font-body-md text-body-md text-secondary text-sm">A combined measure of SLA and delay risk.</p>
-</div>
-<span class="hidden md:block material-symbols-outlined text-secondary">add</span>
-<!-- Step 5 -->
-<div class="flex-1 max-w-xs bg-surface border border-black p-6 flex flex-col items-center text-center relative group">
-<h3 class="font-headline-md text-headline-md mb-2">Explanation</h3>
-<p class="font-body-md text-body-md text-secondary text-sm">The factors contributing to the request's risk.</p>
-</div>
+<!-- Risk Score + Explanation -->
+<div class="mt-8 md:mt-16 relative z-20 bg-surface py-4 px-4 flex flex-col md:flex-row justify-center items-stretch md:items-center gap-8 md:gap-12">
+
+    <!-- Risk Score -->
+    <div class="flex-1 max-w-md bg-surface border border-black p-8 flex flex-col items-center text-center">
+        <h3 class="font-headline-md text-headline-md mb-2 text-primary-container">
+            Risk Score
+        </h3>
+        <p class="font-body-md text-body-md text-secondary text-sm">
+            A combined measure of SLA and delay risk.
+        </p>
+    </div>
+
+    <!-- Plus -->
+    <span class="hidden md:block font-headline-md text-secondary text-3xl">
+        +
+    </span>
+
+    <!-- Explanation -->
+    <div class="flex-1 max-w-md bg-surface border border-black p-8 flex flex-col items-center text-center">
+        <h3 class="font-headline-md text-headline-md mb-2">
+            Explanation
+        </h3>
+        <p class="font-body-md text-body-md text-secondary text-sm">
+            The factors contributing to the request's risk.
+        </p>
+    </div>
+
 </div>
 <div class="mt-8 md:mt-16 border-t border-black pt-12 flex flex-col md:flex-row justify-between gap-8">
 <div class="flex-1 border border-black p-8 bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
