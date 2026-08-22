@@ -205,6 +205,34 @@
             font-weight: 700;
             margin-bottom: 12px;
         }
+        .output-wrapper {
+    border: 1px solid #000;
+    padding: 18px;
+    background: #fff;
+}
+
+.output-box {
+    display: grid;
+    grid-template-columns: 1fr 70px 1fr;
+    align-items: center;
+}
+
+.output-box .output-card {
+    min-height: 140px;
+}
+
+@media (max-width: 900px) {
+
+    .output-box {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .output-box .plus {
+        transform: none;
+    }
+
+}
 
         .process-card.highlight h2 {
             color: #7A1F2B;
@@ -630,47 +658,53 @@
          RISK SCORE + EXPLANATION
     ====================================================== -->
 
-    <section class="output">
+<section class="output">
 
-        <div class="output-line"></div>
+    <div class="output-line"></div>
+
+    <div class="output-wrapper">
+
+        <div class="output-box">
+
+            <div class="output-card">
+
+                <h2>
+                    Risk Score
+                </h2>
+
+                <p>
+                    A 0–100 measure of how strongly the available
+                    request signals indicate SLA-breach risk.
+                </p>
+
+            </div>
 
 
-        <div class="output-card">
+            <div class="plus">
+                +
+            </div>
 
-            <h2>
-                Risk Score
-            </h2>
 
-            <p>
-                A 0–100 measure of how strongly the available
-                request signals indicate SLA-breach risk.
-            </p>
+            <div class="output-card explanation">
+
+                <h2>
+                    Explanation
+                </h2>
+
+                <p>
+                    The key factors contributing to the request's
+                    predicted risk, presented in plain language.
+                </p>
+
+            </div>
 
         </div>
 
+    </div>
 
-        <div class="plus">
-            +
-        </div>
+    <div class="output-line"></div>
 
-
-        <div class="output-card explanation">
-
-            <h2>
-                Explanation
-            </h2>
-
-            <p>
-                The key factors contributing to the request's
-                predicted risk, presented in plain language.
-            </p>
-
-        </div>
-
-
-        <div class="output-line"></div>
-
-    </section>
+</section>
 
 
     <!-- =====================================================
