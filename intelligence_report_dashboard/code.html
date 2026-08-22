@@ -1,0 +1,395 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Intelligence Report - DelayGuard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&amp;family=Hanken+Grotesk:wght@400;600;700&amp;family=Literata:ital,wght@1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#897172",
+                        "surface": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-container": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "surface-tint": "#a13c46",
+                        "on-tertiary-container": "#7cbaa5",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed-dim": "#ffb3b5",
+                        "tertiary-container": "#004b3b",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary-container": "#ff8b92",
+                        "surface-dim": "#dadada",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#94d3be",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb3b5",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary": "#003227",
+                        "inverse-on-surface": "#f1f1f1",
+                        "background": "#f9f9f9",
+                        "on-primary-fixed": "#40000c",
+                        "on-secondary-container": "#646464",
+                        "surface-container-low": "#f3f3f3",
+                        "on-background": "#1a1c1c",
+                        "tertiary-fixed": "#b0f0d9",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-tertiary-fixed": "#002018",
+                        "on-surface-variant": "#564242",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#5b0617",
+                        "secondary": "#5e5e5e",
+                        "primary-fixed": "#ffdada",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "outline-variant": "#dcc0c0",
+                        "on-surface": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#0a5040",
+                        "primary-container": "#7a1f2b",
+                        "on-primary-fixed-variant": "#822530"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "note-italic": ["Literata"],
+                        "label-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "note-italic": ["14px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface border-b border-on-surface-variant flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto z-50 sticky top-0">
+<div class="flex items-center gap-12">
+<a class="font-headline-lg text-headline-lg text-primary tracking-tight" href="../delayguard_home/code.html">DelayGuard</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-secondary hover:opacity-90 transition-opacity font-label-md text-label-md" href="../upload_analyze/code.html">Platform</a>
+<a class="text-secondary hover:opacity-90 transition-opacity font-label-md text-label-md border-b-2 border-primary pb-1 text-primary font-semibold" href="./code.html">Intelligence</a>
+<a class="text-secondary hover:opacity-90 transition-opacity font-label-md text-label-md" href="../how_delayguard_thinks/code.html">How It Works</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<a class="bg-[#000000] text-white font-label-md text-label-md px-6 py-3 rounded-none hover:bg-primary-container transition-colors duration-150" href="../upload_analyze/code.html">Monitor Risk</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 flex flex-col gap-12">
+<!-- Header Section -->
+<header class="flex flex-col gap-2 max-w-3xl">
+<h1 class="font-display-lg text-display-lg text-on-background">Intelligence Report</h1>
+<p class="font-body-lg text-body-lg text-secondary">A prioritized view of requests that may need intervention.</p>
+</header>
+<!-- Key Metrics -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter border-t border-b border-on-background py-8">
+<div class="flex flex-col gap-2 border-r border-surface-variant pr-gutter last:border-0 last:pr-0">
+<span class="font-label-md text-label-md uppercase text-secondary tracking-widest">REQUESTS ANALYZED</span>
+<span id="metric-requests" class="font-headline-lg text-headline-lg text-on-background">—</span>
+</div>
+<div class="flex flex-col gap-2 border-r border-surface-variant pr-gutter last:border-0 last:pr-0">
+<span class="font-label-md text-label-md uppercase text-secondary tracking-widest">AT-RISK REQUESTS</span>
+<span id="metric-at-risk" class="font-headline-lg text-headline-lg text-on-background">—</span>
+</div>
+<div class="flex flex-col gap-2 border-r border-surface-variant pr-gutter last:border-0 last:pr-0">
+<span class="font-label-md text-label-md uppercase text-primary-container tracking-widest font-bold">HIGH-RISK REQUESTS</span>
+<span id="metric-high-risk" class="font-headline-lg text-headline-lg text-primary-container font-bold">—</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-md text-label-md uppercase text-secondary tracking-widest">NEAREST SLA DEADLINE</span>
+<span id="metric-nearest-sla" class="font-headline-lg text-headline-lg text-on-background">—</span>
+</div>
+</section>
+<!-- Ranked Request List Core Feature -->
+<section class="flex flex-col gap-6">
+<!-- Table Controls -->
+<div class="flex flex-col md:flex-row justify-between items-end gap-4 border-b border-on-background pb-4">
+<div class="flex gap-4 w-full md:w-auto">
+<div class="flex flex-col gap-1 w-full md:w-auto">
+<label class="font-label-md text-label-md uppercase text-secondary text-xs">Department</label>
+<select id="dept-filter" class="bg-surface border border-surface-variant rounded-none py-2 px-4 font-body-md text-sm focus:border-on-background focus:ring-0">
+<option value="all">All Departments</option>
+</select>
+</div>
+<div class="flex flex-col gap-1 w-full md:w-auto">
+<label class="font-label-md text-label-md uppercase text-secondary text-xs">Risk Level</label>
+<select id="risk-filter" class="bg-surface border border-surface-variant rounded-none py-2 px-4 font-body-md text-sm focus:border-on-background focus:ring-0">
+<option value="all">All Risk Levels</option>
+<option value="high">High Risk (80–100)</option>
+<option value="medium">Medium Risk (50–79)</option>
+<option value="low">Low Risk (0–49)</option>
+</select>
+</div>
+</div>
+<div class="relative w-full md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">search</span>
+<input id="search-input" class="w-full bg-surface-container border border-surface-variant rounded-none py-2 pl-9 pr-4 font-body-md text-sm focus:outline-none focus:border-on-background focus:ring-0" placeholder="Search Request ID..." type="text">
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high border-b border-on-background font-label-md text-label-md uppercase text-on-background">
+<th class="py-3 px-4 font-normal">Rank</th>
+<th class="py-3 px-4 font-normal">Request ID</th>
+<th class="py-3 px-4 font-normal">Department</th>
+<th class="py-3 px-4 font-normal">Current Stage</th>
+<th class="py-3 px-4 font-normal">Time Remaining</th>
+<th class="py-3 px-4 font-normal">Risk Score</th>
+<th class="py-3 px-4 font-normal w-1/4">Why At Risk</th>
+<th class="py-3 px-4 font-normal text-right">Action</th>
+</tr>
+</thead>
+<tbody id="risk-tbody" class="font-body-md text-sm text-on-background">
+<!-- High Risk Row -->
+<tr class="border-b border-surface-variant hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-4 font-bold text-primary-container">01</td>
+<td class="py-4 px-4">2281</td>
+<td class="py-4 px-4">Finance</td>
+<td class="py-4 px-4">Approval</td>
+<td class="py-4 px-4 font-bold text-primary-container">4h</td>
+<td class="py-4 px-4 font-bold text-primary-container">92/100</td>
+<td class="py-4 px-4 text-secondary">Approval stage is taking longer than historical average.</td>
+<td class="py-4 px-4 text-right">
+<button class="border border-on-background bg-surface text-on-background px-4 py-1 font-label-md text-label-md uppercase group-hover:bg-on-background group-hover:text-surface transition-colors">Escalate</button>
+</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-4 text-secondary">02</td>
+<td class="py-4 px-4">2294</td>
+<td class="py-4 px-4">IT Ops</td>
+<td class="py-4 px-4">Vendor Review</td>
+<td class="py-4 px-4">12h</td>
+<td class="py-4 px-4 text-secondary">88/100</td>
+<td class="py-4 px-4 text-secondary">Vendor typically requires 48h lead time for this category.</td>
+<td class="py-4 px-4 text-right">
+<button class="border border-on-background bg-surface text-on-background px-4 py-1 font-label-md text-label-md uppercase group-hover:bg-on-background group-hover:text-surface transition-colors">Reassign</button>
+</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-4 text-secondary">03</td>
+<td class="py-4 px-4">2301</td>
+<td class="py-4 px-4">HR</td>
+<td class="py-4 px-4">Document Check</td>
+<td class="py-4 px-4">24h</td>
+<td class="py-4 px-4 text-secondary">75/100</td>
+<td class="py-4 px-4 text-secondary">Incomplete documentation flagged by automated system.</td>
+<td class="py-4 px-4 text-right">
+<button class="border border-on-background bg-surface text-on-background px-4 py-1 font-label-md text-label-md uppercase group-hover:bg-on-background group-hover:text-surface transition-colors">Prioritize</button>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-surface-dim border-t border-on-surface-variant dark:border-outline-variant w-full mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-start w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto gap-8">
+<div class="flex flex-col gap-4">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">DelayGuard</div>
+<div class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim">© 2026 DelayGuard.</div>
+</div>
+<div class="flex flex-wrap gap-8 font-label-md text-label-md">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../upload_analyze/code.html">Platform</a>
+<a class="text-on-surface dark:text-on-surface-variant font-bold hover:text-primary dark:hover:text-primary-fixed-dim transition-colors opacity-80" href="./code.html">Intelligence</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../how_delayguard_thinks/code.html">How It Works</a>
+</div>
+</div>
+</footer>
+
+<script>
+(function () {
+  var stored = localStorage.getItem('delayguard_data');
+
+  function fv(row, keys) {
+    for (var i = 0; i < keys.length; i++) { if (row[keys[i]] !== undefined && row[keys[i]] !== '') return row[keys[i]]; }
+    return '';
+  }
+
+  function getRequestId(r) { return fv(r, ['Request ID','RequestID','request_id','ID','id','TicketID','Ticket ID']) || '—'; }
+  function getDept(r) { return fv(r, ['Department','department','Dept']) || '—'; }
+  function getStage(r) { return fv(r, ['Current Stage','CurrentStage','current_stage','Stage']) || '—'; }
+
+  function parseDate(r, keys) {
+    var s = fv(r, keys);
+    if (!s) return null;
+    var d = new Date(s.replace(' ', 'T'));
+    return isNaN(d.getTime()) ? null : d;
+  }
+
+  function calcScore(r) {
+    var now = new Date();
+    var sla = parseDate(r, ['SLA Deadline','SLADeadline','sla_deadline','SLA_Deadline','Due Date']);
+    if (!sla) return 50;
+    if (sla <= now) return 100;
+    var req = parseDate(r, ['Request Time','RequestTime','request_time','RequestDate','Created']);
+    var total = sla - (req && req < sla ? req : new Date(sla - 7*24*60*60*1000));
+    if (total <= 0) return 50;
+    return Math.max(0, Math.min(100, Math.round((1 - (sla - now) / total) * 100)));
+  }
+
+  function getTimeRemaining(r) {
+    var now = new Date();
+    var sla = parseDate(r, ['SLA Deadline','SLADeadline','sla_deadline','SLA_Deadline','Due Date']);
+    if (!sla) return '—';
+    var diff = sla - now;
+    if (diff <= 0) return 'OVERDUE';
+    var h = diff / 3600000;
+    return h < 24 ? Math.round(h) + 'h' : Math.round(h / 24) + 'd';
+  }
+
+  function getWhy(r, score) {
+    var now = new Date();
+    var sla = parseDate(r, ['SLA Deadline','SLADeadline','sla_deadline','SLA_Deadline','Due Date']);
+    var stage = getStage(r);
+    var dept = getDept(r);
+    if (!sla) return stage + ' stage is approaching the SLA deadline.';
+    var diff = sla - now;
+    if (diff <= 0) return 'SLA deadline has passed for this request.';
+    var h = diff / 3600000;
+    if (h < 4) return stage + ' stage has less than 4 hours before SLA breach.';
+    if (h < 24) return stage + ' stage is approaching the SLA deadline in ' + dept + '.';
+    return stage + ' stage in ' + dept + ' may not complete before the SLA deadline.';
+  }
+
+  function getAction(score) {
+    if (score >= 90) return 'Escalate';
+    if (score >= 75) return 'Reassign';
+    if (score >= 60) return 'Prioritize';
+    if (score >= 50) return 'Add Resources';
+    return 'Monitor';
+  }
+
+  function getNearestSLA(rows) {
+    var now = new Date(), nearest = null;
+    rows.forEach(function (r) {
+      var d = parseDate(r, ['SLA Deadline','SLADeadline','sla_deadline','SLA_Deadline','Due Date']);
+      if (d && d > now && (!nearest || d < nearest)) nearest = d;
+    });
+    if (!nearest) return 'N/A';
+    var h = (nearest - now) / 3600000;
+    return h < 24 ? Math.round(h) + 'h' : Math.round(h / 24) + 'd';
+  }
+
+  function renderTable(rows, riskFilter, deptFilter, search) {
+    var tbody = document.getElementById('risk-tbody');
+    if (!tbody) return;
+    var processed = rows.map(function (r) {
+      var s = calcScore(r);
+      return { row: r, score: s, time: getTimeRemaining(r), why: getWhy(r, s), action: getAction(s) };
+    });
+    // apply filters
+    if (deptFilter && deptFilter !== 'all') {
+      processed = processed.filter(function (p) { return getDept(p.row).toLowerCase() === deptFilter.toLowerCase(); });
+    }
+    if (search) {
+      processed = processed.filter(function (p) { return getRequestId(p.row).toLowerCase().includes(search.toLowerCase()); });
+    }
+    if (riskFilter === 'high') processed = processed.filter(function (p) { return p.score >= 80; });
+    else if (riskFilter === 'medium') processed = processed.filter(function (p) { return p.score >= 50 && p.score < 80; });
+    else if (riskFilter === 'low') processed = processed.filter(function (p) { return p.score < 50; });
+    else processed = processed.filter(function (p) { return p.score >= 50; }); // default: show at-risk only
+    processed.sort(function (a, b) { return b.score - a.score; });
+    if (processed.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="8" class="py-8 px-4 text-center text-secondary font-body-md">No requests match this filter.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = '';
+    processed.slice(0, 50).forEach(function (p, idx) {
+      var hi = p.score >= 80;
+      var tr = document.createElement('tr');
+      tr.className = 'border-b border-surface-variant hover:bg-surface-container-low transition-colors group';
+      tr.innerHTML = '<td class="py-4 px-4 ' + (hi ? 'font-bold text-primary-container' : 'text-secondary') + '">' + String(idx+1).padStart(2,'0') + '</td>'
+        + '<td class="py-4 px-4">' + getRequestId(p.row) + '</td>'
+        + '<td class="py-4 px-4">' + getDept(p.row) + '</td>'
+        + '<td class="py-4 px-4">' + getStage(p.row) + '</td>'
+        + '<td class="py-4 px-4 ' + (hi ? 'font-bold text-primary-container' : '') + '">' + p.time + '</td>'
+        + '<td class="py-4 px-4 ' + (hi ? 'font-bold text-primary-container' : 'text-secondary') + '">' + p.score + '/100</td>'
+        + '<td class="py-4 px-4 text-secondary">' + p.why + '</td>'
+        + '<td class="py-4 px-4 text-right"><button class="border border-on-background bg-surface text-on-background px-4 py-1 font-label-md text-label-md uppercase group-hover:bg-on-background group-hover:text-surface transition-colors">' + p.action + '</button></td>';
+      tbody.appendChild(tr);
+    });
+  }
+
+  if (stored) {
+    var data = JSON.parse(stored);
+    var rows = data.rows;
+    var scores = rows.map(calcScore);
+    var atRisk = scores.filter(function (s) { return s >= 50; }).length;
+    var highRisk = scores.filter(function (s) { return s >= 80; }).length;
+
+    var el = function(id) { return document.getElementById(id); };
+    if (el('metric-requests')) el('metric-requests').textContent = rows.length.toLocaleString();
+    if (el('metric-at-risk')) el('metric-at-risk').textContent = atRisk.toLocaleString();
+    if (el('metric-high-risk')) el('metric-high-risk').textContent = highRisk.toLocaleString();
+    if (el('metric-nearest-sla')) el('metric-nearest-sla').textContent = getNearestSLA(rows);
+
+    // Populate dept filter
+    var deptFilter = el('dept-filter');
+    if (deptFilter) {
+      var depts = [...new Set(rows.map(function(r){ return getDept(r); }).filter(function(d){ return d !== '—'; }))];
+      depts.forEach(function(d) {
+        var opt = document.createElement('option'); opt.value = d; opt.textContent = d;
+        deptFilter.appendChild(opt);
+      });
+    }
+
+    renderTable(rows, 'all', 'all', '');
+
+    var riskSel = el('risk-filter');
+    var deptSel = el('dept-filter');
+    var searchEl = el('search-input');
+    function applyFilters() {
+      renderTable(rows,
+        riskSel ? riskSel.value : 'all',
+        deptSel ? deptSel.value : 'all',
+        searchEl ? searchEl.value : '');
+    }
+    if (riskSel) riskSel.addEventListener('change', applyFilters);
+    if (deptSel) deptSel.addEventListener('change', applyFilters);
+    if (searchEl) searchEl.addEventListener('input', applyFilters);
+  }
+})();
+</script>
+
+</body></html>

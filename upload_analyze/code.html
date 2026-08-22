@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Upload &amp; Analyze - DelayGuard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Literata:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "outline": "#897172",
+                        "surface": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-container": "#e2e2e2",
+                        "surface-bright": "#f9f9f9",
+                        "surface-tint": "#a13c46",
+                        "on-tertiary-container": "#7cbaa5",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed-dim": "#ffb3b5",
+                        "tertiary-container": "#004b3b",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary-container": "#ff8b92",
+                        "surface-dim": "#dadada",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#94d3be",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#ffb3b5",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary": "#003227",
+                        "inverse-on-surface": "#f1f1f1",
+                        "background": "#f9f9f9",
+                        "on-primary-fixed": "#40000c",
+                        "on-secondary-container": "#646464",
+                        "surface-container-low": "#f3f3f3",
+                        "on-background": "#1a1c1c",
+                        "tertiary-fixed": "#b0f0d9",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-tertiary-fixed": "#002018",
+                        "on-surface-variant": "#564242",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#5b0617",
+                        "secondary": "#5e5e5e",
+                        "primary-fixed": "#ffdada",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "outline-variant": "#dcc0c0",
+                        "on-surface": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#0a5040",
+                        "primary-container": "#7a1f2b",
+                        "on-primary-fixed-variant": "#822530"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "container-max": "1440px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "note-italic": ["Literata"],
+                        "label-md": ["Hanken Grotesk"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "note-italic": ["14px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- Top Navigation (JSON) -->
+<nav class="bg-surface dark:bg-surface-dim border-b border-on-surface-variant dark:border-outline-variant w-full sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-headline-lg text-headline-lg text-primary dark:text-primary-fixed-dim tracking-tight font-bold" href="../delayguard_home/code.html">
+                    DelayGuard
+                </a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 hover:opacity-90 transition-opacity" href="./code.html">Platform</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:opacity-90 transition-opacity" href="../intelligence_report_dashboard/code.html">Intelligence</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:opacity-90 transition-opacity" href="../how_delayguard_thinks/code.html">How It Works</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<a href="./code.html" class="hidden md:block bg-on-background text-on-primary font-label-md text-label-md px-6 py-2 uppercase tracking-wide border border-transparent hover:opacity-90 transition-opacity rounded-none">
+                    Monitor Risk
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full px-margin-mobile md:px-margin-desktop py-12 md:py-24 max-w-container-max mx-auto">
+<div class="max-w-4xl mx-auto">
+<header class="mb-12 border-b border-on-background pb-8">
+<h1 class="font-display-lg text-display-lg text-on-background mb-4">Upload &amp; Analyze</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">Upload your service-request data to identify cases that may need attention.</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Upload Area -->
+<div class="md:col-span-8 space-y-8">
+<!-- Drag and Drop Zone -->
+<div id="drop-zone" class="border-2 border-dashed border-on-surface-variant bg-surface-container-low p-12 flex flex-col items-center justify-center text-center cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">upload_file</span>
+<h3 class="font-headline-md text-headline-md mb-2">Drag &amp; Drop CSV/XLSX</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">or click to browse from your computer</p>
+<button onclick="document.getElementById('file-input').click()" class="bg-transparent border border-on-background text-on-background font-label-md text-label-md px-6 py-2 uppercase tracking-wide hover:bg-surface-variant transition-colors rounded-none">
+                            Select File
+                        </button>
+<input type="file" id="file-input" accept=".csv,.xlsx,.xls" class="hidden">
+</div>
+<!-- Selected File State (Active) -->
+<div id="file-state" class="hidden border border-on-background p-6 bg-surface-bright flex flex-col gap-4">
+<div class="flex justify-between items-start border-b border-on-surface-variant pb-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">description</span>
+<div>
+<p id="file-name" class="font-label-md text-label-md uppercase text-on-background">—</p>
+<p id="file-size" class="font-body-md text-body-md text-secondary text-sm">—</p>
+</div>
+</div>
+<button id="remove-file" class="text-secondary hover:text-error transition-colors" title="Remove file">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-on-background bg-surface-container-high p-3 border border-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span id="detect-result" class="font-body-md text-body-md text-sm">—</span>
+</div>
+<div class="flex justify-end mt-4">
+<a id="run-analysis" href="../intelligence_report_dashboard/code.html" class="bg-primary-container text-on-primary font-label-md text-label-md px-8 py-3 uppercase tracking-wide hover:opacity-90 transition-opacity rounded-none border border-transparent">
+                                Run DelayGuard Analysis
+                            </a>
+</div>
+</div>
+<!-- Error State Example -->
+<div class="border border-error p-6 bg-error-container/20 flex flex-col gap-4 hidden">
+<div class="flex justify-between items-start border-b border-error pb-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-error text-2xl" style="font-variation-settings: 'FILL' 1;">error</span>
+<div>
+<p class="font-label-md text-label-md uppercase text-error">Invalid_Data_Dump.csv</p>
+<p class="font-body-md text-body-md text-secondary text-sm">1.1 MB</p>
+</div>
+</div>
+<button class="text-secondary hover:text-error transition-colors" title="Remove file">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div>
+<p class="font-body-md text-body-md font-bold text-error mb-2">We couldn't analyze this file.</p>
+<p class="font-body-md text-body-md text-on-background mb-4">The following required columns are missing:</p>
+<ul class="list-disc list-inside font-body-md text-body-md text-secondary pl-2 space-y-1">
+<li>Request Time</li>
+<li>SLA Deadline</li>
+<li>Current Stage</li>
+<li>Department</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Sidebar Guidelines -->
+<div class="md:col-span-4 border-l border-on-surface-variant pl-gutter">
+<h4 class="font-headline-md text-headline-md mb-6 border-b border-on-surface-variant pb-2">Formatting Guide</h4>
+<div class="space-y-6">
+<div>
+<h5 class="font-label-md text-label-md uppercase text-on-background mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">table_view</span> Required Columns
+                            </h5>
+<p class="font-body-md text-body-md text-secondary text-sm">Your file should contain: Request ID, Request Time, SLA Deadline, Current Stage and Department.</p>
+</div>
+<div>
+<h5 class="font-label-md text-label-md uppercase text-on-background mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">event</span> Date Format
+                            </h5>
+<p class="font-body-md text-body-md text-secondary text-sm">Use a consistent date and time format for all timestamp fields.<br>Example: 2026-08-22 14:30:00</p>
+</div>
+<div class="bg-surface-container-high p-4 border border-on-surface-variant">
+<p class="font-note-italic text-note-italic text-secondary">
+                                "Rigorous data structuring is the prerequisite for objective analysis. Please review our detailed formatting documentation if you encounter validation errors."
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (JSON) -->
+<footer class="bg-surface dark:bg-surface-dim border-t border-on-surface-variant dark:border-outline-variant w-full mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-start w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto gap-8">
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">DelayGuard</span>
+<span class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim">© 2026 DelayGuard.</span>
+</div>
+<div class="flex flex-wrap gap-6 md:gap-8">
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="./code.html">Platform</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../intelligence_report_dashboard/code.html">Intelligence</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="../how_delayguard_thinks/code.html">How It Works</a>
+</div>
+</div>
+</footer>
+<script>
+(function () {
+  var dropZone = document.getElementById('drop-zone');
+  var fileInput = document.getElementById('file-input');
+  var fileState = document.getElementById('file-state');
+  var fileNameEl = document.getElementById('file-name');
+  var fileSizeEl = document.getElementById('file-size');
+  var detectResultEl = document.getElementById('detect-result');
+  var removeBtn = document.getElementById('remove-file');
+
+  function formatSize(bytes) {
+    return (bytes / 1024 / 1024).toFixed(1) + ' MB';
+  }
+
+  function parseCSVLine(line) {
+    var result = [], current = '', inQ = false;
+    for (var i = 0; i < line.length; i++) {
+      if (line[i] === '"') { inQ = !inQ; }
+      else if (line[i] === ',' && !inQ) { result.push(current); current = ''; }
+      else { current += line[i]; }
+    }
+    result.push(current);
+    return result;
+  }
+
+  function parseCSV(text) {
+    var lines = text.trim().split(/\r?\n/);
+    var headers = parseCSVLine(lines[0]).map(function (h) { return h.trim().replace(/^"|"$/g, ''); });
+    var rows = [];
+    for (var i = 1; i < lines.length; i++) {
+      if (!lines[i].trim()) continue;
+      var vals = parseCSVLine(lines[i]);
+      var row = {};
+      headers.forEach(function (h, idx) { row[h] = (vals[idx] || '').trim().replace(/^"|"$/g, ''); });
+      rows.push(row);
+    }
+    return { headers: headers, rows: rows };
+  }
+
+  function handleFile(file) {
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      var parsed = parseCSV(e.target.result);
+      var rows = parsed.rows;
+      var depts = new Set(rows.map(function (r) { return r['Department'] || r['department'] || ''; }).filter(Boolean));
+      var types = new Set(rows.map(function (r) { return r['Service Type'] || r['ServiceType'] || r['service_type'] || ''; }).filter(Boolean));
+      fileNameEl.textContent = file.name;
+      fileSizeEl.textContent = formatSize(file.size);
+      detectResultEl.textContent = rows.length + ' requests detected, ' + depts.size + ' departments' + (types.size ? ', ' + types.size + ' service types' : '');
+      dropZone.classList.add('hidden');
+      fileState.classList.remove('hidden');
+      localStorage.setItem('delayguard_data', JSON.stringify({ headers: parsed.headers, rows: rows, fileName: file.name }));
+    };
+    reader.readAsText(file);
+  }
+
+  dropZone.addEventListener('dragover', function (e) { e.preventDefault(); });
+  dropZone.addEventListener('drop', function (e) {
+    e.preventDefault();
+    if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener('change', function () {
+    if (this.files[0]) handleFile(this.files[0]);
+  });
+  removeBtn.addEventListener('click', function () {
+    fileState.classList.add('hidden');
+    dropZone.classList.remove('hidden');
+    fileInput.value = '';
+    localStorage.removeItem('delayguard_data');
+  });
+})();
+</script>
+</body></html>
