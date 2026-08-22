@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,6 +23,10 @@
 
     <style>
 
+        /* =====================================================
+           RESET
+        ===================================================== */
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -39,9 +45,9 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            NAVBAR
-        ========================= */
+        ===================================================== */
 
         .navbar {
             height: 82px;
@@ -50,7 +56,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 3.2vw;
-            background: #fff;
+            background: #ffffff;
         }
 
         .brand {
@@ -72,7 +78,7 @@
         .nav-links a {
             font-size: 15px;
             font-weight: 500;
-            color: #000;
+            color: #000000;
             text-decoration: none;
             padding: 8px 0;
             position: relative;
@@ -97,8 +103,8 @@
         }
 
         .monitor-btn {
-            background: #000;
-            color: #fff;
+            background: #000000;
+            color: #ffffff;
             text-decoration: none;
             border: none;
             padding: 12px 28px;
@@ -114,9 +120,9 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            PAGE
-        ========================= */
+        ===================================================== */
 
         .page {
             width: 100%;
@@ -142,13 +148,13 @@
             padding-left: 20px;
             font-size: 18px;
             line-height: 1.6;
-            color: #454545;
+            color: #555555;
         }
 
 
-        /* =========================
+        /* =====================================================
            PROCESS
-        ========================= */
+        ===================================================== */
 
         .process {
             display: grid;
@@ -160,24 +166,24 @@
 
         .process-card {
             min-height: 235px;
-            border: 1px solid #000;
+            border: 1px solid #000000;
             padding: 28px 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            background: #fff;
+            background: #ffffff;
         }
 
         .process-card.highlight {
-            border: 1px solid #000;
-            box-shadow: 6px 6px 0 #000;
+            border: 1px solid #000000;
+            box-shadow: 6px 6px 0 #000000;
         }
 
         .icon {
             width: 58px;
             height: 58px;
-            border: 1px solid #000;
+            border: 1px solid #000000;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -197,7 +203,7 @@
         .icon.accent-filled {
             background: #7A1F2B;
             border-color: #7A1F2B;
-            color: #fff;
+            color: #ffffff;
         }
 
         .process-card h2 {
@@ -212,7 +218,7 @@
         }
 
         .process-card p {
-            color: #555;
+            color: #555555;
             font-size: 16px;
             line-height: 1.5;
         }
@@ -220,21 +226,21 @@
         .arrow {
             text-align: center;
             font-size: 32px;
-            color: #555;
+            color: #555555;
             font-family: "EB Garamond", serif;
         }
 
 
-        /* =========================
+        /* =====================================================
            RISK SCORE + EXPLANATION
-        ========================= */
+        ===================================================== */
 
         .output {
             width: calc(100% - 10vw);
             margin: 0 auto 90px;
-            border: 1px solid #000;
+            border: 1px solid #000000;
             padding: 22px;
-            background: #fff;
+            background: #ffffff;
         }
 
         .output-box {
@@ -245,7 +251,7 @@
         }
 
         .output-card {
-            border: 1px solid #000;
+            border: 1px solid #000000;
             min-height: 140px;
             padding: 25px;
             display: flex;
@@ -253,7 +259,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: #fff;
+            background: #ffffff;
         }
 
         .output-card h2 {
@@ -265,11 +271,11 @@
         }
 
         .output-card.explanation h2 {
-            color: #000;
+            color: #000000;
         }
 
         .output-card p {
-            color: #555;
+            color: #555555;
             font-size: 15px;
             line-height: 1.45;
         }
@@ -278,12 +284,13 @@
             font-family: "EB Garamond", serif;
             text-align: center;
             font-size: 32px;
+            color: #000000;
         }
 
 
-        /* =========================
+        /* =====================================================
            BOTTOM OUTPUTS
-        ========================= */
+        ===================================================== */
 
         .bottom-results {
             display: grid;
@@ -293,8 +300,9 @@
         }
 
         .result-card {
-            border: 1px solid #000;
+            border: 1px solid #000000;
             padding: 30px;
+            background: #ffffff;
         }
 
         .result-card h3 {
@@ -305,7 +313,7 @@
         }
 
         .result-card p {
-            color: #555;
+            color: #555555;
             font-size: 16px;
             line-height: 1.5;
         }
@@ -315,16 +323,17 @@
         }
 
 
-        /* =========================
+        /* =====================================================
            FOOTER
-        ========================= */
+        ===================================================== */
 
         .footer {
-            border-top: 1px solid #000;
+            border-top: 1px solid #000000;
             padding: 35px 3.2vw 42px;
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
+            background: #ffffff;
         }
 
         .footer-brand {
@@ -335,7 +344,7 @@
         }
 
         .copyright {
-            color: #555;
+            color: #555555;
             font-size: 13px;
         }
 
@@ -345,7 +354,7 @@
         }
 
         .footer-links a {
-            color: #333;
+            color: #333333;
             text-decoration: none;
             font-size: 13px;
         }
@@ -355,9 +364,9 @@
         }
 
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+        /* =====================================================
+           RESPONSIVE — TABLET
+        ===================================================== */
 
         @media (max-width: 900px) {
 
@@ -419,6 +428,10 @@
         }
 
 
+        /* =====================================================
+           RESPONSIVE — MOBILE
+        ===================================================== */
+
         @media (max-width: 650px) {
 
             .navbar {
@@ -469,128 +482,13 @@
                 padding: 24px 20px;
             }
 
-            /* =========================================================
-   DELAYGUARD — PAGE CONSISTENCY OVERRIDE
-   ========================================================= */
-
-:root {
-    --dg-bg: #ffffff;
-    --dg-black: #000000;
-    --dg-gray: #555555;
-    --dg-accent: #7A1F2B;
-}
-
-/* Background + base text */
-html,
-body {
-    background: var(--dg-bg) !important;
-    color: var(--dg-black) !important;
-}
-
-/* Shared typography */
-body {
-    font-family: "Hanken Grotesk", sans-serif !important;
-}
-
-h1,
-h2,
-h3,
-.brand,
-.footer-brand,
-.arrow,
-.plus {
-    font-family: "EB Garamond", serif !important;
-}
-
-/* Accent */
-.brand,
-.nav-links a.active,
-.nav-links a:hover,
-.monitor-btn:hover,
-.process-card.highlight h2,
-.output-card h2,
-.result-card.accent h3,
-.footer-brand,
-.footer-links a:hover {
-    color: var(--dg-accent) !important;
-}
-
-/* Navbar */
-.navbar {
-    background: var(--dg-bg) !important;
-    border-bottom-color: var(--dg-black) !important;
-}
-
-.nav-links a {
-    color: var(--dg-black) !important;
-}
-
-.nav-links a.active::after {
-    background: var(--dg-accent) !important;
-}
-
-/* Button */
-.monitor-btn {
-    background: var(--dg-black) !important;
-    color: #ffffff !important;
-}
-
-.monitor-btn:hover {
-    background: var(--dg-accent) !important;
-    color: #ffffff !important;
-}
-
-/* Main cards */
-.process-card,
-.output,
-.output-card,
-.result-card {
-    background: var(--dg-bg) !important;
-    border-color: var(--dg-black) !important;
-}
-
-/* Secondary text */
-.intro p,
-.process-card p,
-.output-card p,
-.result-card p {
-    color: var(--dg-gray) !important;
-}
-
-/* Accent elements */
-.intro p {
-    border-left-color: var(--dg-accent) !important;
-}
-
-.icon.accent {
-    border-color: var(--dg-accent) !important;
-    color: var(--dg-accent) !important;
-}
-
-.icon.accent-filled {
-    background: var(--dg-accent) !important;
-    border-color: var(--dg-accent) !important;
-    color: #ffffff !important;
-}
-
-/* Risk Engine */
-.process-card.highlight {
-    border-color: var(--dg-black) !important;
-    box-shadow: 6px 6px 0 var(--dg-black) !important;
-}
-
-/* Footer */
-.footer {
-    background: var(--dg-bg) !important;
-    border-top-color: var(--dg-black) !important;
-}
-
-.footer-links a {
-    color: #333333 !important;
-}
+            .footer-links {
+                gap: 18px;
+            }
         }
 
     </style>
+
 </head>
 
 
@@ -637,7 +535,9 @@ h3,
 <main class="page">
 
 
-    <!-- INTRO -->
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
 
     <section class="intro">
 
@@ -647,8 +547,8 @@ h3,
 
         <p>
             DelayGuard evaluates current request conditions against
-            SLA timing and historical delay patterns to identify
-            cases that may require intervention.
+            SLA timing and delay indicators to identify cases that
+            may require intervention.
         </p>
 
     </section>
@@ -679,8 +579,8 @@ h3,
 
             <p>
                 Uses request details, SLA deadlines, stages,
-                departments and historical delay information
-                from the uploaded dataset.
+                departments and other relevant fields from
+                the uploaded dataset.
             </p>
 
         </div>
@@ -709,7 +609,7 @@ h3,
 
             <p>
                 Calculates time remaining, time spent in the
-                current stage and relevant delay indicators.
+                current stage and other relevant delay indicators.
             </p>
 
         </div>
@@ -737,8 +637,8 @@ h3,
             </h2>
 
             <p>
-                Combines SLA timing and delay indicators
-                to estimate the likelihood of an SLA breach.
+                Combines the available SLA and delay signals
+                to estimate the risk of an SLA breach.
             </p>
 
         </div>
@@ -755,6 +655,7 @@ h3,
 
         <div class="output-box">
 
+
             <!-- RISK SCORE -->
 
             <div class="output-card">
@@ -764,8 +665,8 @@ h3,
                 </h2>
 
                 <p>
-                    A 0–100 measure of how strongly the available
-                    request signals indicate SLA-breach risk.
+                    A 0–100 measure indicating the level of
+                    SLA-breach risk associated with a request.
                 </p>
 
             </div>
@@ -787,11 +688,12 @@ h3,
                 </h2>
 
                 <p>
-                    The key factors contributing to the request's
+                    The key factors contributing to a request's
                     predicted risk, presented in plain language.
                 </p>
 
             </div>
+
 
         </div>
 
@@ -849,6 +751,7 @@ h3,
 
 <footer class="footer">
 
+
     <div>
 
         <div class="footer-brand">
@@ -890,8 +793,10 @@ h3,
 
     </div>
 
+
 </footer>
 
 
 </body>
+
 </html>
