@@ -38,6 +38,7 @@
             min-height: 100vh;
         }
 
+
         /* =========================
            NAVBAR
         ========================= */
@@ -205,34 +206,6 @@
             font-weight: 700;
             margin-bottom: 12px;
         }
-        .output-wrapper {
-    border: 1px solid #000;
-    padding: 18px;
-    background: #fff;
-}
-
-.output-box {
-    display: grid;
-    grid-template-columns: 1fr 70px 1fr;
-    align-items: center;
-}
-
-.output-box .output-card {
-    min-height: 140px;
-}
-
-@media (max-width: 900px) {
-
-    .output-box {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .output-box .plus {
-        transform: none;
-    }
-
-}
 
         .process-card.highlight h2 {
             color: #7A1F2B;
@@ -253,19 +226,22 @@
 
 
         /* =========================
-           OUTPUT
+           RISK SCORE + EXPLANATION
         ========================= */
 
         .output {
-            display: grid;
-            grid-template-columns: 1fr 80px 1fr;
-            align-items: center;
-            margin: 0 5vw 90px;
+            width: calc(100% - 10vw);
+            margin: 0 auto 90px;
+            border: 1px solid #000;
+            padding: 22px;
+            background: #fff;
         }
 
-        .output-line {
-            height: 1px;
-            background: #777;
+        .output-box {
+            display: grid;
+            grid-template-columns: 1fr 70px 1fr;
+            align-items: center;
+            width: 100%;
         }
 
         .output-card {
@@ -412,17 +388,18 @@
             }
 
             .output {
-                grid-template-columns: 1fr;
-                gap: 18px;
-                margin: 0 0 60px;
+                width: 100%;
+                margin: 0 auto 60px;
+                padding: 15px;
             }
 
-            .output-line {
-                display: none;
+            .output-box {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             .plus {
-                transform: rotate(90deg);
+                transform: none;
             }
 
             .bottom-results {
@@ -658,13 +635,11 @@
          RISK SCORE + EXPLANATION
     ====================================================== -->
 
-<section class="output">
-
-    <div class="output-line"></div>
-
-    <div class="output-wrapper">
+    <section class="output">
 
         <div class="output-box">
+
+            <!-- RISK SCORE -->
 
             <div class="output-card">
 
@@ -680,10 +655,14 @@
             </div>
 
 
+            <!-- PLUS -->
+
             <div class="plus">
                 +
             </div>
 
+
+            <!-- EXPLANATION -->
 
             <div class="output-card explanation">
 
@@ -700,11 +679,7 @@
 
         </div>
 
-    </div>
-
-    <div class="output-line"></div>
-
-</section>
+    </section>
 
 
     <!-- =====================================================
